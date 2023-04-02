@@ -6,9 +6,9 @@ jobs:
   test:
     environment: testing
     env:
-     MONGODB_PASSWORD: xffcqhpLXNsow1Pl
-     MONGODB_USERNAME: badrelsayed000
-     MONGODB_CLUSTER_ADDRESS: cluster0.6wc7woy.mongodb.net
+     MONGODB_PASSWORD: ${{secrets.MONGODB_PASSWORD}}
+     MONGODB_USERNAME: ${{secrets.MONGODB_USERNAME}}
+     MONGODB_CLUSTER_ADDRESS: ${{secrets.MONGODB_CLUSTER_ADDRESS}}
      PORT: 8080
     runs-on: ubuntu-latest
     steps:
@@ -34,6 +34,6 @@ jobs:
       - name: Output information
         run: |        
           echo "MONGODB_PASSWORD: ${{env.MONGODB_PASSWORD}}"
-          echo "ONGODB_USERNAME: ${{env.ONGODB_USERNAME}}"
+          echo "ONGODB_USERNAME: ${{env.MONGODB_USERNAME}}"
           echo "MONGODB_CLUSTER_ADDRESS: ${{env.MONGODB_CLUSTER_ADDRESS}}"
           echo "MONGODB_DB_NAME: ${{env.MONGODB_DB_NAME}}"
